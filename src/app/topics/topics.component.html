@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="topicContainer" [class.selected]="topic === selectedTopic" *ngFor="let topic of topics" (click)="onSelect(topic)">
+    <div><span>topic: </span>{{ topic.title }}</div>
+  </div>
+</div>
+
+<div *ngIf="selectedTopic" class="container">
+  <app-topic-detail [topic]="selectedTopic"></app-topic-detail>
+</div>

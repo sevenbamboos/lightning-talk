@@ -1,0 +1,15 @@
+<div *ngIf="id">
+  <div>
+    id: <span>{{ id }}</span>
+  </div>
+  <div>
+    title: <span>{{ topic.title }}</span>
+  </div>
+  <div>
+    description: <span>{{ topic.description }}</span>
+  </div>
+</div>
+
+<div *ngIf="!id">
+  new topic
+</div>

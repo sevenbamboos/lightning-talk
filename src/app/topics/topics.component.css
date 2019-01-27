@@ -1,0 +1,16 @@
+.container {
+  padding: 1em;
+  margin: 1em;
+}
+
+.topicContainer {
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-width: 0.2em;
+  border-style: dashed;
+  border-color: antiquewhite;
+}
+
+.selected {
+  background: antiquewhite;
+}

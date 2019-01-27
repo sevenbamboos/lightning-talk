@@ -1,0 +1,12 @@
+<div *ngIf="topic">
+  <div><span>id: </span>{{ topic.id }}</div>
+  <div>
+    <label>title:
+      <input [(ngModel)]="topic.title" placeholder="title">
+    </label>
+    <label>description:
+      <input [(ngModel)]="topic.description" placeholder="description">
+    </label>
+    <a routerLink="../topic-edit/{{topic.id}}">Edit</a>
+  </div>
+</div>
