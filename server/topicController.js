@@ -3,7 +3,7 @@
 const { Topic } = require('./model');
 
 exports.list_all = (req, res) => {
-  Topic.findAll((err, topics) => {
+  Topic.findAll(null, (err, topics) => {
     if (err) res.send(err);
     console.log('res', topics);
     res.send(topics);

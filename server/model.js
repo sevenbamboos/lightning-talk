@@ -1,5 +1,6 @@
 'user strict';
-var sql = require('./db.js');
+const sql = require('./db.js');
+const { nextTalkDate } = require('./util/nextTalkDate');
 
 class Topic {
   constructor(title, description, email) {
@@ -8,6 +9,7 @@ class Topic {
     this.email = email;
 
     this.created_at = new Date();
+    this.talk_time = nextTalkDate(this.created_at);
   }
 
   create(result) {
@@ -70,4 +72,4 @@ class Topic {
   }
 }
 
-module.exports = Topic;
+module.exports = { Topic, };

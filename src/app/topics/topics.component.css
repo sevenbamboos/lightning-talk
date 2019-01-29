@@ -1,14 +1,17 @@
 .container {
   padding: 1em;
   margin: 1em;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .topicContainer {
-  padding-bottom: 1em;
-  margin-bottom: 1em;
-  border-width: 0.2em;
-  border-style: dashed;
-  border-color: antiquewhite;
+  margin: 0.5em;
+  padding: 0.4em;
+}
+
+.topic-card {
+  max-width: 400px;
 }
 
 .selected {
