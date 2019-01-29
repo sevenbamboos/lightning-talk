@@ -12,4 +12,16 @@
 
 <div *ngIf="!id">
   new topic
+  <mat-form-field>
+    <input matInput [(ngModel)]="topic.title" placeholder="Title">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput [(ngModel)]="topic.description" placeholder="Descritpion"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="topic.email" placeholder="Email">
+  </mat-form-field>
+
 </div>
