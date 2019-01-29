@@ -13,6 +13,10 @@ exports.list_all = (req, res) => {
 exports.create_new = (req, res) => {
   const {title, description, email} = req.body;
   const new_topic = new Topic(title, description, email);
+  
+  new_topic.ip = req.locals.ip;
+  new_topic.host = req.locals.host;
+  new_topic.browser = req.locals.browser;
 
   //handles null error 
   if(!new_topic.title || !new_topic.email) {

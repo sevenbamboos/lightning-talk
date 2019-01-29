@@ -1,13 +1,12 @@
 const express = require('express'),
       server = express(),
       bodyParser = require('body-parser'),
+      browserMiddleware = require('./browserMiddleware'),
+      routes = require('./routes'),
       port = process.env.PORT || 3000;
 
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
-
-server.listen(port);
-console.log('Topic server started on:', port);
 
 server.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -15,5 +14,9 @@ server.use((req, res, next) => {
   next();
 });
 
-const routes = require('./routes');
-routes(server); //register the route
+server.use(browserMiddleware);
+
+routes(server);
+
+server.listen(port);
+console.log('Topic server started on:', port);

@@ -36,8 +36,16 @@ export class TopicEditComponent implements OnInit {
     }
   }
 
+  goBack(): void {
+    this.location.back();
+  }
+
   loadTopic(id: number) {
     this.topicService.loadTopic(id).subscribe(x => this.topic = x);
+  }
+
+  onSubmit() {
+    this.topicService.createTopic(this.topic).subscribe(() => this.goBack());
   }
 
 }

@@ -14,9 +14,9 @@
   new topic
 </div>
 
-<form #topicForm="ngForm">
+<form (ngSubmit)="onSubmit()" #topicForm="ngForm">
   <mat-form-field>
-    <input matInput [(ngModel)]="topic.title" placeholder="Title">
+    <input matInput [(ngModel)]="topic.title" required placeholder="Title">
   </mat-form-field>
 
   <mat-form-field>
@@ -24,6 +24,10 @@
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput [(ngModel)]="topic.email" placeholder="Email">
+    <input matInput [(ngModel)]="topic.email" required placeholder="Email">
+  </mat-form-field>
+
+  <mat-form-field>
+    <button mat-button [disabled]="!topicForm.form.valid">SUBMIT</button>
   </mat-form-field>
 </form>
