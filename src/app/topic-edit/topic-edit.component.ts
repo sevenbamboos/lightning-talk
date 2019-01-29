@@ -28,6 +28,11 @@ export class TopicEditComponent implements OnInit {
       this.loadTopic(this.id);
     } else {
       this.id = null;
+      this.topic = {
+        title: 'New Topic',
+        description: '...',
+        email: '',
+      };
     }
   }
 

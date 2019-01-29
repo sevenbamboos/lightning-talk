@@ -12,6 +12,9 @@
 
 <div *ngIf="!id">
   new topic
+</div>
+
+<form #topicForm="ngForm">
   <mat-form-field>
     <input matInput [(ngModel)]="topic.title" placeholder="Title">
   </mat-form-field>
@@ -23,5 +26,4 @@
   <mat-form-field>
     <input matInput [(ngModel)]="topic.email" placeholder="Email">
   </mat-form-field>
-
-</div>
+</form>
