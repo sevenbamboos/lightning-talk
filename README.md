@@ -1,20 +1,21 @@
 # LightningTalkExercise
 
 ## Database server
-Start mysql on the default port with a `test` database. Grant user `developer` (password `12345678`) with all permissions.
+Start mysql on the default port (3306) with a `test` database. Grant user `developer` (password `12345678`) with all permissions.
 
 In case of `ER_NOT_SUPPORTED_AUTH_MODE`, execute `ALTER USER 'developer'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'`
+
+Run `cd db && docker build -t <username>/lightning-talk-db-server` to build the Docker image
 
 ## Backend API server
 
 Run `npm run api-server-dev` for an API server. Navigate to `http://localhost:3000/`. The app will automatically reload if you change any of the source files under server folder.
 
+Run `docker build -t <username>/lightning-talk-api-server` to build the Docker image.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Build API server
-Run `docker build -t <username>/lightning-talk-api-server` to build the Docker image.
 
 ## Build
 
