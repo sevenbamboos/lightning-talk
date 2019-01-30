@@ -1,21 +1,6 @@
 <div class="container">
   <div class="topicContainer" [class.selected]="topic === selectedTopic" *ngFor="let topic of topics" (click)="onSelect(topic)">
-    <mat-card class="topic-card">
-      <mat-card-header>
-        <mat-card-title>{{ topic.title }}</mat-card-title>
-        <mat-card-subtitle>{{ topic.email }}</mat-card-subtitle>
-        <mat-card-subtitle>{{ topic.talk_time | date: shortDate }}</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>{{ topic.description }}</p>
-        <p>{{ topic.created_at | date: short }}</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <a routerLink="../topic-edit/{{topic.id}}"><button mat-button>EDIT</button></a>
-        <!-- <button mat-button>EDIT</button> -->
-        <button mat-button>DELETE</button>
-      </mat-card-actions>
-    </mat-card>
+    <app-topic-detail [topic]="topic"></app-topic-detail>
   </div>
 </div>
 

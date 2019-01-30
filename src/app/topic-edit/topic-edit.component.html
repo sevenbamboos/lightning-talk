@@ -1,33 +1,26 @@
-<div *ngIf="id">
-  <div>
-    id: <span>{{ id }}</span>
-  </div>
-  <div>
-    title: <span>{{ topic.title }}</span>
-  </div>
-  <div>
-    description: <span>{{ topic.description }}</span>
-  </div>
+<div class="edit-container">
+  <form (ngSubmit)="onSubmit()" #topicForm="ngForm">
+
+    <div class="form-group">
+      <label for="title">Topic</label>
+      <input [(ngModel)]="topic.title" name="title" required length="100" placeholder="Title">
+      <span class="help-text"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input [(ngModel)]="topic.email" name="email" required placeholder="Email">
+      <span class="help-text"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea [(ngModel)]="topic.description" name="description" placeholder="Descritpion"></textarea>
+    </div>
+
+    <div class="form-group">
+      <button mat-button>SAVE</button> 
+    </div>
+
+  </form>
 </div>
-
-<div *ngIf="!id">
-  new topic
-</div>
-
-<form (ngSubmit)="onSubmit()" #topicForm="ngForm">
-  <mat-form-field>
-    <input matInput [(ngModel)]="topic.title" required placeholder="Title">
-  </mat-form-field>
-
-  <mat-form-field>
-    <textarea matInput [(ngModel)]="topic.description" placeholder="Descritpion"></textarea>
-  </mat-form-field>
-
-  <mat-form-field>
-    <input matInput [(ngModel)]="topic.email" required placeholder="Email">
-  </mat-form-field>
-
-  <mat-form-field>
-    <button mat-button [disabled]="!topicForm.form.valid">SUBMIT</button>
-  </mat-form-field>
-</form>

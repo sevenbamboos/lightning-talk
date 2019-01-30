@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatCardModule, } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatCardModule, MatFormFieldModule, MatInputModule, } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +27,8 @@ import { TopicEditComponent } from './topic-edit/topic-edit.component';
     MatButtonModule,
     MatCheckboxModule,
     MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
     AppRoutingModule
   ],
   providers: [],

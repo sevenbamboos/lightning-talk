@@ -1,10 +1,11 @@
 export class Topic {
-  // id: number;
-  // title: string;
-  // description: string;
+  id: number;
   created_at: Date;
   talk_time: Date;
 
-  constructor(public id: number, public title: string, public email: string, public description: string) {
+  constructor(
+    public title: string, 
+    public email: string, 
+    public description: string) {
   }
 }

@@ -11,9 +11,9 @@ class Topic {
     this.created_at = new Date();
     this.talk_time = nextTalkDate(this.created_at);
 
-    this.ip = '';
-    this.host = '';
-    this.browser = '';
+    this.ip_addr = '';
+    this.host_name = '';
+    this.browser_name = '';
   }
 
   create(result) {

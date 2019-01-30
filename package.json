@@ -56,7 +56,10 @@
     "typescript": "~3.2.2"
   },
   "nodemonConfig": {
-    "ignore": ["src/*", "e2e/*"],
+    "ignore": [
+      "src/*",
+      "e2e/*"
+    ],
     "delay": "2500"
   }
 }

@@ -7,7 +7,7 @@ module.exports = app => {
     .get(topics.list_all)
     .post(topics.create_new);
    
-  app.route('/topics/:topicId')
+  app.route('/topics/:id')
     .get(topics.get_one)
     // TODO
     // .put(topics.update_one)

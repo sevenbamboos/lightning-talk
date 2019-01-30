@@ -14,9 +14,9 @@ exports.create_new = (req, res) => {
   const {title, description, email} = req.body;
   const new_topic = new Topic(title, description, email);
   
-  new_topic.ip = req.locals.ip;
-  new_topic.host = req.locals.host;
-  new_topic.browser = req.locals.browser;
+  new_topic.ip_addr = req.ip;
+  new_topic.host_name = req.hostname;
+  new_topic.browser_name = req.browser;
 
   //handles null error 
   if(!new_topic.title || !new_topic.email) {
