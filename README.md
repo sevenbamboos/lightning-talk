@@ -1,14 +1,20 @@
 # LightningTalkExercise
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
+## Database server
+Start mysql on the default port with a `test` database. Grant user `developer` (password `12345678`) with all permissions.
+
+In case of `ER_NOT_SUPPORTED_AUTH_MODE`, execute `ALTER USER 'developer'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'`
+
+## Backend API server
+
+Run `npm run api-server-dev` for an API server. Navigate to `http://localhost:3000/`. The app will automatically reload if you change any of the source files under server folder.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Build API server
+Run `docker build -t <username>/lightning-talk-api-server` to build the Docker image.
 
 ## Build
 
@@ -21,7 +27,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

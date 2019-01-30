@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "api-server": "./node_modules/.bin/nodemon --exec 'node' ./server/server.js"
+    "api-server": "node ./server/server.js",
+    "api-server-dev": "./node_modules/.bin/nodemon --exec 'node' ./server/server.js"
   },
   "private": true,
   "dependencies": {
