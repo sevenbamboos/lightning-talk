@@ -15,6 +15,13 @@ export class TopicService {
 
   constructor(private http: HttpClient) { }
 
+  nextTalk(): Observable<Object> {
+    return this.http.get<Object>('http://localhost:3000/topics/next_talk').pipe(
+      tap(_ => console.log('next talk')),
+      catchError(this.handleError<Object>('nextTalk'))
+    );
+  }
+
   getTopics(): Observable<Topic[]> {
     return this.http.get<Topic[]>('http://localhost:3000/topics');
   }

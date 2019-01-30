@@ -10,13 +10,20 @@ import { TopicService } from '../topic.service';
 export class TopicsComponent implements OnInit {
 
   topics: Topic[];
-
   selectedTopic: Topic;
+  nextTalk;
 
   constructor(private topicService: TopicService) { }
 
   ngOnInit() {
     this.loadTopics();
+    this.getNextTalk();
+  }
+
+  getNextTalk() {
+    this.topicService.nextTalk().subscribe( msg =>
+      this.nextTalk = msg
+    );
   }
 
   loadTopics() {

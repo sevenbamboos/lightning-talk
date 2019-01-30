@@ -1,8 +1,14 @@
 'use strict';
 
 const { Topic } = require('./model');
+const { nextTalkDate } = require('./util/nextTalkDate');
 
-exports.list_all = (req, res) => {
+exports.next_talk_date = (_, res) => {
+  console.log('next_talk_date in controller');
+  res.json({date: nextTalkDate(new Date())});
+};
+
+exports.list_all = (_, res) => {
   Topic.findAll(null, (err, topics) => {
     if (err) res.send(err);
     console.log('res', topics);
