@@ -25,8 +25,13 @@ export class TopicsComponent implements OnInit {
     );
   }
 
+  deleteTopic = (id: number) => {
+    this.topicService.deleteTopic(id).subscribe( msg => {
+      this.loadTopics();
+    });
+  }
+
   onSelect(topic: Topic) {
-    console.log('Selecting topic:', topic.title);
     this.selectedTopic = topic;
   }
 

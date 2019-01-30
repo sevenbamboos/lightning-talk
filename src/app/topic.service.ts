@@ -33,6 +33,13 @@ export class TopicService {
     );
   }
 
+  deleteTopic(id: number): Observable<Object> {
+    return this.http.delete<Object>(`http://localhost:3000/topics/${id}`).pipe(
+      tap(_ => console.log(`deleted topic id=${id}`)),
+      catchError(this.handleError<Object>(`deleteTopic id=${id}`))
+    );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error); // log to console instead

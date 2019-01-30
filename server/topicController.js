@@ -16,7 +16,7 @@ exports.create_new = (req, res) => {
   
   new_topic.ip_addr = req.ip;
   new_topic.host_name = req.hostname;
-  new_topic.browser_name = req.browser;
+  new_topic.browser_name = req.browser.name;
 
   //handles null error 
   if(!new_topic.title || !new_topic.email) {
@@ -32,12 +32,14 @@ exports.create_new = (req, res) => {
 exports.get_one = (req, res) => {
   Topic.load(req.params.id, (err, topic) => {
     if (err) res.send(err);
-    res.json(topic);
+    if (!topic) res.json({});
+    else if (topic.length > 1) res.send({error: true, message: `more than one topic with id ${req.params.id}`});
+    else res.json(topic[0]);
   });
 };
 
 exports.delete_one = (req, res) => {
-  Topic.delete_one(req.params.id, (err, topic) => {
+  Topic.delete(req.params.id, (err, topic) => {
     if (err) res.send(err);
     res.json({ message: 'Topic successfully deleted' });
   });

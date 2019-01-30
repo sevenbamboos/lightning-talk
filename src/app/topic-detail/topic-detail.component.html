@@ -11,7 +11,7 @@
     </mat-card-content>
     <mat-card-actions>
       <a routerLink="../topic-edit/{{topic.id}}"><button mat-button>EDIT</button></a>
-      <button mat-button>DELETE</button>
+      <button mat-button (click)="onDelete()">DELETE</button>
     </mat-card-actions>
   </mat-card>
 </div>

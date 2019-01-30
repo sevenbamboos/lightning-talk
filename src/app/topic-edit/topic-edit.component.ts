@@ -37,11 +37,13 @@ export class TopicEditComponent implements OnInit {
   }
 
   loadTopic(id: number) {
-    this.topicService.loadTopic(id).subscribe(x => this.topic = x);
+    this.topicService.loadTopic(id).subscribe(x => {this.topic = x; console.log(this.topic);});
   }
 
   onSubmit() {
-    this.topicService.createTopic(this.topic).subscribe(() => this.goBack());
+    if (!this.id) {
+      this.topicService.createTopic(this.topic).subscribe(() => this.goBack());
+    }
   }
 
 }

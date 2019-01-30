@@ -9,10 +9,14 @@ import { Topic } from '../topic';
 export class TopicDetailComponent implements OnInit {
 
   @Input() topic: Topic;
+  @Input() deleteHandler;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onDelete() {
+    this.deleteHandler(this.topic.id);
+  }
 }

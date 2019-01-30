@@ -10,13 +10,14 @@ server.use(bodyParser.json());
 server.use((_, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
   next();
 });
 
 server.use((req, _, next) => {
   req.ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   req.browser = require('browser-detect')(req.headers['user-agent']);
-  console.log(`ip ${req.ip}\nhost ${req.hostname}\nbrowser ${req.browser.name}`);
+  console.log(`[inbound] ip ${req.ip}; host ${req.hostname}; browser ${req.browser.name}`);
   next();
 });
 

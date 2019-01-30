@@ -1,9 +1,14 @@
 <div class="container">
-  <div class="topicContainer" [class.selected]="topic === selectedTopic" *ngFor="let topic of topics" (click)="onSelect(topic)">
-    <app-topic-detail [topic]="topic"></app-topic-detail>
+
+  <div class="topicContainer" 
+    [class.selected]="topic === selectedTopic" 
+    *ngFor="let topic of topics" 
+    (click)="onSelect(topic)">
+
+    <app-topic-detail 
+      [topic]="topic" 
+      [deleteHandler]="deleteTopic">
+    </app-topic-detail>
+
   </div>
 </div>
-
-<!-- <div *ngIf="selectedTopic" class="container">
-  <app-topic-detail [topic]="selectedTopic"></app-topic-detail>
-</div> -->
