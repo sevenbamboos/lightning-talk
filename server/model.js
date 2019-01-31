@@ -14,6 +14,7 @@ class Topic {
     this.ip_addr = '';
     this.host_name = '';
     this.browser_name = '';
+    this.os_name = '';
   }
 
   create(result) {
@@ -52,9 +53,9 @@ class Topic {
     });   
   }
 
-  // TODO save more properties
   save(result) {
-    sql.query("UPDATE topics SET title = ?, description = ? WHERE id = ?", this.title, this.description, this.id, (err, res) => {
+    const params = [this.title, this.description, this.email, this.id];
+    sql.query("UPDATE topics SET title = ?, description = ?, email = ? WHERE id = ?", params, (err, res) => {
       if(err) {
         console.log("error: ", err);
         result(err, null);

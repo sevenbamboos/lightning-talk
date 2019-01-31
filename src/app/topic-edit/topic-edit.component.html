@@ -1,27 +1,29 @@
 <div class="edit-container">
 
-  <form (ngSubmit)="onSubmit()" #topicForm="ngForm">
+  <form (ngSubmit)="onSubmit()" class="topic-form" #topicForm="ngForm">
 
     <div class="form-group">
-      <label for="title">Topic</label>
-      <input [(ngModel)]="topic.title" name="title" readonly="{{id}}" required length="100" placeholder="Title">
-      <span class="help-text"></span>
+      <mat-form-field class="topic-full-width">
+        <input matInput [(ngModel)]="topic.title" name="title" required length="100" placeholder="Title">
+      </mat-form-field>      
     </div>
 
     <div class="form-group">
-      <label for="email">Email</label>
-      <input [(ngModel)]="topic.email" name="email" readonly="{{id}}" required placeholder="Email">
-      <span class="help-text"></span>
+      <mat-form-field class="topic-full-width">
+        <input matInput [(ngModel)]="topic.email" name="email" required placeholder="Email">
+      </mat-form-field>      
     </div>
 
     <div class="form-group">
-      <label for="description">Description</label>
-      <textarea [(ngModel)]="topic.description" name="description" readonly="{{id}}" placeholder="Descritpion"></textarea>
+      <mat-form-field class="topic-full-width">
+        <textarea matInput [(ngModel)]="topic.description" name="description" placeholder="Descritpion"></textarea>
+      </mat-form-field>      
     </div>
 
-    <div *ngIf="!id" class="form-group">
+    <div class="form-group">
       <button mat-button>SAVE</button> 
     </div>
 
   </form>
+
 </div>

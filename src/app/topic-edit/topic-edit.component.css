@@ -1,49 +1,15 @@
-.edit-container {
-  /* display: flex;
-  flex-direction: column; */
-  text-align:center;
-}
-
-.edit-container > * {
-  width: 100%;
-}
-
-.edit-container input {
-  min-width: 50em;
-  min-height: 2.2em;
-  margin-right: 2em;
-}
-
-.edit-container textarea {
-  min-width: 50em;
-  min-height: 10em;
-  margin-right: 2em;
-}
-
 .form-group {
   position: relative;
   padding-top: 1.5rem;
   margin: 2em;
 }
 
-label {
-  position: absolute;
-  top: 0;
-  /* font-size: var(--font-size-small); */
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.2s ease-out;
+.topic-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
 }
 
-input:placeholder-shown + label {
-  opacity: 0;
-  transform: translateY(1rem);
-}
-
-input:required + .help-text::before {
-  content: '*Required';
-}
-
-input:optional + .help-text::before {
-  content: '*Optional';
+.topic-full-width {
+  width: 100%;
 }

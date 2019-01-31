@@ -12,8 +12,7 @@ module.exports = app => {
    
   app.route('/topics/:id')
     .get(topics.get_one)
-    // TODO
-    // .put(topics.update_one)
+    .put(topics.update_one)
     .delete(topics.delete_one);
 
 };

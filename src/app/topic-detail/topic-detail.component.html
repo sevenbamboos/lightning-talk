@@ -4,6 +4,10 @@
       <mat-card-title>{{ topic.title }}</mat-card-title>
       <mat-card-subtitle>{{ topic.email }}</mat-card-subtitle>
       <mat-card-subtitle>{{ topic.talk_time | date: shortDate }}</mat-card-subtitle>
+      <mat-card-subtitle>IP: {{ topic.ip_addr }}</mat-card-subtitle>
+      <mat-card-subtitle>Host: {{ topic.host_name }}</mat-card-subtitle>
+      <mat-card-subtitle>Browser: {{ topic.browser_name }}</mat-card-subtitle>
+      <mat-card-subtitle>OS: {{ topic.os_name }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <p>{{ topic.description }}</p>

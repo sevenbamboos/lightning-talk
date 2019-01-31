@@ -23,6 +23,7 @@ exports.create_new = (req, res) => {
   new_topic.ip_addr = req.ip;
   new_topic.host_name = req.hostname;
   new_topic.browser_name = req.browser.name;
+  new_topic.os_name = req.browser.os;
 
   //handles null error 
   if(!new_topic.title || !new_topic.email) {
@@ -33,6 +34,24 @@ exports.create_new = (req, res) => {
       res.json(topic);
     });
   }
+};
+
+exports.update_one = (req, res) => {
+
+  const {id, title, description, email} = req.body;
+
+  Topic.load(id, (err, topic) => {
+    if (err) res.send(err);
+    if (!topic || topic.length > 1) res.send({error: true, message: `none or not unique for topic with id ${id}`});
+    else {
+      const updatedTopic = Object.assign(new Topic(title, description, email), topic[0], {id, title, description, email});
+      console.log('updatedTopic:', updatedTopic);
+      updatedTopic.save((error, topic) => {
+        if (error) res.send(error);
+        res.json(topic);
+      });
+    }
+  });
 };
 
 exports.get_one = (req, res) => {

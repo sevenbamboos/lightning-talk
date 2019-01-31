@@ -33,6 +33,12 @@ export class TopicService {
     );
   }
 
+  updateTopic(topic: Topic): Observable<Topic> {
+    return this.http.put<Topic>(`http://localhost:3000/topics/${topic.id}`, topic, httpOptions).pipe(
+      tap((topic: Topic) => console.log(`updated topic w/ id=${topic.id}`)),
+      catchError(this.handleError<Topic>('updateTopic'))
+    );
+  }
   loadTopic(id: number): Observable<Topic> {
     return this.http.get<Topic>(`http://localhost:3000/topics/${id}`).pipe(
       tap(_ => console.log(`fetched topic id=${id}`)),

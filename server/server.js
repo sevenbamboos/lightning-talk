@@ -17,7 +17,7 @@ server.use((_, res, next) => {
 server.use((req, _, next) => {
   req.ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   req.browser = require('browser-detect')(req.headers['user-agent']);
-  console.log(`[inbound] ${new Date().toLocaleTimeString()} ip ${req.ip}; host ${req.hostname}; browser ${req.browser.name}`);
+  console.log(`[inbound] ${new Date().toLocaleTimeString()} ip ${req.ip}; host ${req.hostname}; browser ${req.browser.name}; os ${req.browser.os}`);
   next();
 });
 

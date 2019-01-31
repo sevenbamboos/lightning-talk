@@ -43,6 +43,8 @@ export class TopicEditComponent implements OnInit {
   onSubmit() {
     if (!this.id) {
       this.topicService.createTopic(this.topic).subscribe(() => this.goBack());
+    } else {
+      this.topicService.updateTopic(this.topic).subscribe(() => this.goBack());
     }
   }
 
