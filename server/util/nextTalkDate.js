@@ -36,8 +36,6 @@ const addDaysTo = (aDate, days) => {
   return d;
 };
 
-console.log(prevTalkDate(), nextTalkDate());
-
 module.exports = {
   nextTalkDate, prevTalkDate,
 };

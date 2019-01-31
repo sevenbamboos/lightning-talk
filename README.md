@@ -29,9 +29,13 @@ Topic List
 Topic Editor
 ![Topic Editor](./img/topic-editor.png)
 
-## Running unit tests
+## Running unit tests (client side)
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running unit tests (server side)
+
+Run `npm run api-server-test` to execute the unit tests via Mocha.
 
 ## Running end-to-end tests
 
@@ -44,3 +48,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 * Select available topics (not all topics) for topic list.
 * Support more query options for topic list.
 * Show more details for topic.
+* More unit test coverage.
