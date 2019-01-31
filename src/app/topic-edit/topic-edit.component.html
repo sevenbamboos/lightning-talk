@@ -4,13 +4,13 @@
 
     <div class="form-group">
       <mat-form-field class="topic-full-width">
-        <input matInput [(ngModel)]="topic.title" name="title" required length="100" placeholder="Title">
+        <input matInput [(ngModel)]="topic.title" name="title" required length="100" placeholder="Title" #topic_title>
       </mat-form-field>      
     </div>
 
     <div class="form-group">
       <mat-form-field class="topic-full-width">
-        <input matInput [(ngModel)]="topic.email" name="email" required placeholder="Email">
+        <input type="email" pattern=".+\@.+\..+" matInput [(ngModel)]="topic.email" name="email" required placeholder="Email" #topic_email>
       </mat-form-field>      
     </div>
 
@@ -21,7 +21,7 @@
     </div>
 
     <div class="form-group">
-      <button mat-button>SAVE</button> 
+      <button mat-button [disabled]="!topicForm.form.valid">SAVE</button> 
     </div>
 
   </form>

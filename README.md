@@ -23,11 +23,14 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## User Interface Overview
 
-Topic List
-![Topic List](./img/topic-list.png)
+Topics for Next Talk
+![Topics for Next Talk](./img/topics_for_next_talk.png)
+
+All Topics
+![All topics](./img/all_topics.png)
 
 Topic Editor
-![Topic Editor](./img/topic-editor.png)
+![Topic Editor](./img/topic_editor.png)
 
 ## Running unit tests (client side)
 
@@ -43,9 +46,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## TODO
 
-* Use Material form fields for topic editor.
-* Update exiting topics.
-* Select available topics (not all topics) for topic list.
-* Support more query options for topic list.
-* Show more details for topic.
-* More unit test coverage.
+* More unit test coverage
+* Google account support

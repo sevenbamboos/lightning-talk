@@ -1,5 +1,6 @@
-<div>
-  <span>Next talk is on </span>{{nextTalk.date | date: shortDate }}
+<div class="headContainer">
+  <mat-slide-toggle (click)="toggleLoad()">{{ showAvailable ? 'SHOW AVAILABLE' : 'SHOW ALL'}}</mat-slide-toggle>
+  <div *ngIf="showAvailable">Next talk is on {{nextTalk.date | date: shortDate }} </div>
 </div>
 
 <div class="container">

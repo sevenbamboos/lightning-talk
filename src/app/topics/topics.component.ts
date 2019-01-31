@@ -12,8 +12,11 @@ export class TopicsComponent implements OnInit {
   topics: Topic[];
   selectedTopic: Topic;
   nextTalk;
+  showAvailable: boolean;
 
-  constructor(private topicService: TopicService) { }
+  constructor(private topicService: TopicService) { 
+    this.showAvailable = true;
+  }
 
   ngOnInit() {
     this.loadTopics();
@@ -26,8 +29,27 @@ export class TopicsComponent implements OnInit {
     );
   }
 
+  toggleLoad() {
+    this.showAvailable = !this.showAvailable;
+    this.loadTopics();
+  }
+
   loadTopics() {
-    this.topicService.getTopics().subscribe( topics =>
+    if (this.showAvailable) {
+      this.loadAvailableTopics();
+    } else {
+      this.loadAllTopics();
+    }
+  }
+
+  private loadAvailableTopics() {
+    this.topicService.getAvailableTopics().subscribe( topics =>
+      this.topics = topics
+    );
+  }
+
+  private loadAllTopics() {
+    this.topicService.getAllTopics().subscribe( topics =>
       this.topics = topics
     );
   }

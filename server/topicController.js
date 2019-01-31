@@ -1,7 +1,7 @@
 'use strict';
 
 const { Topic } = require('./model');
-const { nextTalkDate } = require('./util/nextTalkDate');
+const { prevTalkDate, nextTalkDate } = require('./util/nextTalkDate');
 
 exports.next_talk_date = (_, res) => {
   console.log('next_talk_date in controller');
@@ -9,7 +9,15 @@ exports.next_talk_date = (_, res) => {
 };
 
 exports.list_all = (_, res) => {
-  Topic.findAll(null, (err, topics) => {
+  Topic.findAll((err, topics) => {
+    if (err) res.send(err);
+    console.log('res', topics);
+    res.send(topics);
+  });
+};
+
+exports.list_available = (_, res) => {
+  Topic.findAllForNextTalk(prevTalkDate(), (err, topics) => {
     if (err) res.send(err);
     console.log('res', topics);
     res.send(topics);

@@ -40,10 +40,20 @@ class Topic {
     });   
   }
 
-  static findAll(talk_time, result) {
-    // TODO find by talk_time
-    //sql.query("SELECT * FROM topics WHERE talk_time = ?", talk_time, (err, res) => {             
+  static findAll(result) {
     sql.query("SELECT * FROM topics", (err, res) => {             
+      if(err) {
+        console.log("error: ", err);
+        result(err, null);
+      } else {
+        result(null, res);
+      }
+    });   
+  }
+
+  static findAllForNextTalk(pre_talk_time, result) {
+    console.log('find topics after ', pre_talk_time);
+    sql.query("SELECT * FROM topics WHERE talk_time > ?", pre_talk_time, (err, res) => {
       if(err) {
         console.log("error: ", err);
         result(err, null);

@@ -3,8 +3,11 @@ module.exports = app => {
   const topics = require('./topicController');
 
   // topics Routes
-  app.route('/topics/next_talk')
+  app.route('/topics_next_talk')
     .get(topics.next_talk_date);
+
+  app.route('/topics_available')
+    .get(topics.list_available);
 
   app.route('/topics')
     .get(topics.list_all)

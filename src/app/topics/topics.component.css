@@ -1,3 +1,10 @@
+.headContainer {
+  padding: 1em;
+  margin: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+
 .container {
   padding: 1em;
   margin: 1em;
