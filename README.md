@@ -43,5 +43,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## TODO
 
-* More unit test coverage
+* More unit test coverage on server side
 * Google account support
